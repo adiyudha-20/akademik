@@ -1,4 +1,4 @@
-<form name="form_pelajaran" action="index.php?page=create" method="post" enctype="multipart/form-data">
+<form name="form_pelajaran" action="?pel=create_pelajaran" method="post" enctype="multipart/form-data">
 
   <div class="form-group">
     <label for="Kode Pelajaran">Kode Pelajaran</label>

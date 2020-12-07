@@ -6,5 +6,5 @@ $tugas = $_POST['tugas'];
 $uts = $_POST['uts'];
 $uas = $_POST['uas'];
 $mysqli->query("INSERT INTO nilai (kd_nilai,kd_pelajaran,nis,tugas,uts,uas) VALUES('$kd_nilai','$kd_pelajaran','$nis','$tugas','$uts','$uas')");
-header('location:index.php');
+header('location:?tn=read_nilai');
 ?>

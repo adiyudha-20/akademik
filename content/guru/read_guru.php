@@ -72,7 +72,7 @@
           <?php 
               $jmldata     = mysqli_num_rows($mysqli->query("SELECT * FROM guru"));
               $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
-              $linkHalaman = $p->navHalaman($_GET['gu'], $jmlhalaman);
+              $linkHalaman = $p->navHalaman($_GET['home'], $jmlhalaman);
               echo " <li  class='page-item'> $linkHalaman </li>"; 
           ?>
           

@@ -3,12 +3,12 @@ class paging_smpbinainsancendika{
 
 	function cariPosisi($batas){
 
-		if(empty($_GET['gu'])){
+		if(empty($_GET['home'])){
 			$posisi=0;
-			$_GET['gu']=1;
+			$_GET['home']=1;
 		}
 		else{
-			$posisi = ($_GET['gu']-1) * $batas;
+			$posisi = ($_GET['home']-1) * $batas;
 		}
 			return $posisi;
 		}
@@ -27,8 +27,8 @@ class paging_smpbinainsancendika{
 		if($halaman_aktif > 1){
 			$prev = $halaman_aktif-1;
 			$link_halaman .= " 
-			<li class='page-item'><a class='page-link' href=?gu=read_guru>First</a></li>
-			<li class='page-item'><a class='page-link' href=?gu=read_guru&$prev> Prev</a></li>  ";
+			<li class='page-item'><a class='page-link' href=index.php?gu=read_guru&home>First</a></li>
+			<li class='page-item'><a class='page-link' href=index.php?gu=read_guru&home=$prev> Prev</a></li>  ";
 		}
 		else{ 
 			$link_halaman .= "  <li class='page-item disabled'><a class='page-link' href='#' tabindex='-1' aria-label='Previous'>  Previous </a></li>  ";
@@ -39,7 +39,7 @@ class paging_smpbinainsancendika{
 		for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
 		  if ($i < 1)
 		  	continue;
-			  $angka .= "<li class='page-item'><a class='page-link' href=?gu=read_guru&$i>$i</a></li>  ";
+			  $angka .= "<li class='page-item'><a class='page-link' href=index.php?gu=read_guru&home=$i>$i</a></li>  ";
 		  }
 		
 		  $angka .= " <li class='page-item active'>  <a class='page-link' href='#'>$halaman_aktif</a> </li>  ";
@@ -47,21 +47,22 @@ class paging_smpbinainsancendika{
 		for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
 		    if($i > $jmlhalaman)
 		      break;
-			  $angka .= "<li class='page-item'><a class='page-link' href=?gu=read_guru&$i>$i</a></li>  ";
+			  $angka .= "<li class='page-item'><a class='page-link' href=index.php?gu=read_guru&home=$i>$i</a></li>  ";
 		    }
-			$angka .= ($halaman_aktif+2<$jmlhalaman ? " <li class='page-item'>  <span aria-hidden='true'>...</span> <a  class='page-link' href=?gu=read_guru&$jmlhalaman>  $jmlhalaman</a>  " : " </li>");
+			$angka .= ($halaman_aktif+2<$jmlhalaman ? " <li class='page-item'>  <span aria-hidden='true'>...</span> <a  class='page-link' href=index.php?gu=read_guru&home=$jmlhalaman>  $jmlhalaman</a>  " : " </li>");
 			$link_halaman .= "<li class='page-item'>$angka</li>";
 
 			// Link ke halaman berikutnya (Next) dan terakhir (Last) 
 			if($halaman_aktif < $jmlhalaman){
 				$next = $halaman_aktif+1;
 				$link_halaman .= "
-				<li class='page-item'><a class='page-link' href=?gu=read_guru&$next>Next</a></li>
-				<li class='page-item'><a class='page-link' href=?gu=read_guru&$jmlhalaman>Last </a><li>";
+				<li class='page-item'><a class='page-link' href=index.php?gu=read_guru&home=$next>Next</a></li>
+				<li class='page-item'><a class='page-link' href=index.php?gu=read_guru&home=$jmlhalaman>Last </a><li>";
 			}
 			else{
 				$prev = $halaman_aktif-1;
-				$link_halaman .= " <li class='page-item'><a class='page-link' href='?gu=read_guru&$next' aria-label='Next'> Next</a></li> ";
+				$next = $halaman_aktif+1;
+				$link_halaman .= " <li class='page-item'><a class='page-link' href='index.php?gu=read_guru&home=$next' aria-label='Next'> Next</a></li> ";
 			}
 				return $link_halaman;
 		}

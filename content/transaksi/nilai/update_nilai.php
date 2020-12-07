@@ -8,5 +8,5 @@
                         uas  = '$_POST[uas]'
                     WHERE kd_nilai = '$_POST[kd_nilai]'");
   }
-  header('location:index.php');
+  header('location:?tn=read_nilai');
 ?>

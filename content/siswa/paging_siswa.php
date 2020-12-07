@@ -27,8 +27,8 @@ class paging_smpbinainsancendikia{
 		if($halaman_aktif > 1){
 			$prev = $halaman_aktif-1;
 			$link_halaman .= " 
-			<li class='page-item'><a class='page-link' href=index.php?home>First</a></li>
-			<li class='page-item'><a class='page-link' href=index.php?home=$prev> Prev</a></li>  ";
+			<li class='page-item'><a class='page-link' href=index.php?sis=read_siswa&home>First</a></li>
+			<li class='page-item'><a class='page-link' href=index.php?sis=read_siswa&home=$prev> Prev</a></li>  ";
 		}
 		else{ 
 			$link_halaman .= "  <li class='page-item disabled'><a class='page-link' href='#' tabindex='-1' aria-label='Previous'>  Previous </a></li>  ";
@@ -39,7 +39,7 @@ class paging_smpbinainsancendikia{
 		for ($i=$halaman_aktif-2; $i<$halaman_aktif; $i++){
 		  if ($i < 1)
 		  	continue;
-			  $angka .= "<li class='page-item'><a class='page-link' href=index.php?home=$i>$i</a></li>  ";
+			  $angka .= "<li class='page-item'><a class='page-link' href=index.php?sis=read_siswa&home=$i>$i</a></li>  ";
 		  }
 		
 		  $angka .= " <li class='page-item active'>  <a class='page-link' href='#'>$halaman_aktif</a> </li>  ";
@@ -47,21 +47,22 @@ class paging_smpbinainsancendikia{
 		for($i=$halaman_aktif+1; $i<($halaman_aktif+3); $i++){
 		    if($i > $jmlhalaman)
 		      break;
-			  $angka .= "<li class='page-item'><a class='page-link' href=index.php?home=$i>$i</a></li>  ";
+			  $angka .= "<li class='page-item'><a class='page-link' href=index.php?sis=read_siswa&home=$i>$i</a></li>  ";
 		    }
-			$angka .= ($halaman_aktif+2<$jmlhalaman ? " <li class='page-item'>  <span aria-hidden='true'>...</span> <a  class='page-link' href=index.php?home=$jmlhalaman>  $jmlhalaman</a>  " : " </li>");
+			$angka .= ($halaman_aktif+2<$jmlhalaman ? " <li class='page-item'>  <span aria-hidden='true'>...</span> <a  class='page-link' href=index.php?sis=read_siswa&home=$jmlhalaman>  $jmlhalaman</a>  " : " </li>");
 			$link_halaman .= "<li class='page-item'>$angka</li>";
 
 			// Link ke halaman berikutnya (Next) dan terakhir (Last) 
 			if($halaman_aktif < $jmlhalaman){
 				$next = $halaman_aktif+1;
 				$link_halaman .= "
-				<li class='page-item'><a class='page-link' href=index.php?home=$next>Next</a></li>
-				<li class='page-item'><a class='page-link' href=index.php?home=$jmlhalaman>Last </a><li>";
+				<li class='page-item'><a class='page-link' href=index.php?sis=read_siswa&home=$next>Next</a></li>
+				<li class='page-item'><a class='page-link' href=index.php?sis=read_siswa&home=$jmlhalaman>Last </a><li>";
 			}
 			else{
 				$prev = $halaman_aktif-1;
-				$link_halaman .= " <li class='page-item'><a class='page-link' href='index.php?home=$next' aria-label='Next'> Next</a></li> ";
+				$next = $halaman_aktif+1;
+				$link_halaman .= " <li class='page-item'><a class='page-link' href='index.php?sis=read_siswa&home=$next' aria-label='Next'> Next</a></li> ";
 			}
 				return $link_halaman;
 		}

@@ -1,4 +1,4 @@
-<form name="form_jadwal" action="index.php?page=create" method="post" enctype="multipart/form-data">
+<form name="form_jadwal" action="?tj=create_jadwal" method="post" enctype="multipart/form-data">
 
 
   <div class="form-group">

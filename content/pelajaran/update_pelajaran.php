@@ -6,5 +6,5 @@
                         nm_pelajaran    = '$_POST[nm_pelajaran]'
                     WHERE kd_pelajaran = '$_POST[kd_pelajaran]'");
   }
-  header('location:index.php');
+  header('location:?pel=read_pelajaran');
 ?>

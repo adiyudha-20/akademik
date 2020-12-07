@@ -3,7 +3,7 @@
   $e=mysqli_fetch_array($edit);
 ?>
 
-<form name="form_pelajaran" action="index.php?page=update" method="post" enctype="multipart/form-data">
+<form name="form_pelajaran" action="?pel=update_pelajaran" method="post" enctype="multipart/form-data">
 
   <div class="form-group">
     <label for="Kode Pelajaran">Kode Pelajaran</label>

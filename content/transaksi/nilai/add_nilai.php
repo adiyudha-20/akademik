@@ -1,4 +1,4 @@
-<form name="form_nilai" action="index.php?page=create" method="post" enctype="multipart/form-data">
+<form name="form_nilai" action="?tn=create_nilai" method="post" enctype="multipart/form-data">
 
   
   <div class="form-group">

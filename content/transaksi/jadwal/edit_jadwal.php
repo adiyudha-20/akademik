@@ -3,7 +3,7 @@
   $e=mysqli_fetch_array($edit);
 ?>
 
-<form name="form_siswa" action="index.php?page=update" method="post" enctype="multipart/form-data">
+<form name="form_siswa" action="?tj=update_jadwal" method="post" enctype="multipart/form-data">
 
 
   <div class="form-group">

@@ -7,5 +7,5 @@
                         jam  = '$_POST[jam]'
                     WHERE kd_jadwal = '$_POST[kd_jadwal]'");
   }
-  header('location:index.php');
+  header('location:?tj=read_jadwal');
 ?>

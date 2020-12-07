@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Sign-in Akademik Adi</title>
+    <title>Sign-in SMP Muara Ilmu</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
@@ -35,7 +35,7 @@
   <body class="text-center">
 <form class="form-signin" method="post" action="cek_login.php">
   <img class="mb-4" src="assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Log in Akademik Adi</h1>
+  <h1 class="h3 mb-3 font-weight-normal">Log in SMP Muara Ilmu</h1>
   <label for="inputUsername" class="sr-only">Username</label>
   <input type="text" id="InputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>
